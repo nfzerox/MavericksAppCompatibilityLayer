@@ -1,0 +1,6 @@
+# Symbols handled in kpf_stubs_keynote9_10_12.m (skipped by gen_stubs.py).
+__os_log_error_impl
+__os_log_fault_impl
+
+# dyld_stub_binder is dyld-provided; don't emit a stub.
+dyld_stub_binder

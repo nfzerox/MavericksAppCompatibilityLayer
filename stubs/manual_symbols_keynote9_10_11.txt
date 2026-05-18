@@ -1,0 +1,83 @@
+# Symbols hand-implemented in kpf_stubs_keynote9_10_11.m (skipped by gen_stubs.py).
+
+# dyld_stub_binder is dyld-provided; don't emit a stub.
+dyld_stub_binder
+
+# ----- 10.12 os_log family (10.11 lacks the whole subsystem) -----------------
+__os_log_impl
+__os_log_error_impl
+__os_log_debug_impl
+__os_log_fault_impl
+_os_log_type_enabled
+_os_log_create
+__os_log_default
+
+# ----- 10.12 os_unfair_lock (backed by OSSpinLock) ---------------------------
+_os_unfair_lock_lock
+_os_unfair_lock_unlock
+_os_unfair_lock_trylock
+_os_unfair_lock_assert_owner
+_os_unfair_lock_assert_not_owner
+
+# ----- 10.12 dispatch additions ----------------------------------------------
+_dispatch_queue_attr_make_with_autorelease_frequency
+_dispatch_assert_queue_barrier
+_dispatch_assert_queue$V2
+_dispatch_assert_queue_not$V2
+
+# ----- 10.12 activity --------------------------------------------------------
+__os_activity_label_useraction
+
+# ----- 10.13 MetalPerformanceShaders availability ----------------------------
+_MPSSupportsMTLDevice
+
+# ----- 10.13 CG additions ----------------------------------------------------
+_CGColorSpaceCopyICCData
+_CGColorSpaceIsWideGamutRGB
+_CGColorConversionInfoCreate
+
+# ----- 10.13 SecKey additions ------------------------------------------------
+_SecKeyCreateEncryptedData
+_SecKeyCreateDecryptedData
+_SecKeyCreateSignature
+_SecKeyIsAlgorithmSupported
+
+# ----- 10.12 Touch Bar classes (no Touch Bar runtime on 10.11) ---------------
+# Hand-implemented in kpf_stubs_keynote9_10_11.m as KPFInertObject subclasses --
+# decoded successfully from nibs, swallow every selector via
+# -forwardInvocation: so iWork's Touch Bar setup paths can finish
+# without ever doing anything visible.
+_OBJC_CLASS_$_NSTouchBar
+_OBJC_METACLASS_$_NSTouchBar
+_OBJC_CLASS_$_NSTouchBarItem
+_OBJC_METACLASS_$_NSTouchBarItem
+_OBJC_CLASS_$_NSCustomTouchBarItem
+_OBJC_METACLASS_$_NSCustomTouchBarItem
+_OBJC_CLASS_$_NSGroupTouchBarItem
+_OBJC_METACLASS_$_NSGroupTouchBarItem
+_OBJC_CLASS_$_NSColorPickerTouchBarItem
+_OBJC_METACLASS_$_NSColorPickerTouchBarItem
+_OBJC_CLASS_$_NSCandidateListTouchBarItem
+_OBJC_METACLASS_$_NSCandidateListTouchBarItem
+_OBJC_CLASS_$_NSPopoverTouchBarItem
+_OBJC_METACLASS_$_NSPopoverTouchBarItem
+_OBJC_CLASS_$_NSScrubber
+_OBJC_METACLASS_$_NSScrubber
+_OBJC_CLASS_$_NSScrubberItemView
+_OBJC_METACLASS_$_NSScrubberItemView
+_OBJC_CLASS_$_NSScrubberTextItemView
+_OBJC_METACLASS_$_NSScrubberTextItemView
+_OBJC_CLASS_$_NSScrubberLayout
+_OBJC_METACLASS_$_NSScrubberLayout
+_OBJC_CLASS_$_NSScrubberLayoutAttributes
+_OBJC_METACLASS_$_NSScrubberLayoutAttributes
+_OBJC_CLASS_$_NSScrubberFlowLayout
+_OBJC_METACLASS_$_NSScrubberFlowLayout
+_OBJC_CLASS_$_NSScrubberSelectionStyle
+_OBJC_METACLASS_$_NSScrubberSelectionStyle
+
+# ----- 10.12 NSGridView family (hand-implemented as real NSView/NSObject) ----
+_OBJC_CLASS_$_NSGridView
+_OBJC_METACLASS_$_NSGridView
+_OBJC_CLASS_$_NSGridCell
+_OBJC_METACLASS_$_NSGridCell

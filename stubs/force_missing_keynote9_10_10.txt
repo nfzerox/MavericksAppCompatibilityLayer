@@ -1,0 +1,19 @@
+# force_missing_1010.txt -- per-binary force-missing list for the 10.10 tier.
+#
+# Format: <lib> <symbol>   (one pair per line, "#" starts a comment).
+#
+# Symbols here are treated as missing by tools/diff_imports.py even when
+# dlcheck reports OK. patch_surgical then flat-redirects their bind
+# ordinals so dyld searches the global namespace at lazy-bind time, where
+# our kpf_stubs.dylib (or whichever loaded image actually exports the
+# symbol) answers. Used for symbols dyld at run-time cannot resolve via
+# the recorded LC_LOAD_DYLIB ordinal even though dlcheck's probe process
+# happens to expose them via transitive-dep dlsym.
+
+# _LAErrorDomain on 10.10 is in a private LocalAuthentication
+# subframework (LASupport / LAUI), not in LocalAuthentication's own
+# main dylib's export table. dlcheck reports OK because dlsym walks
+# transitive deps; dyld at lazy bind only searches the recorded
+# /System/Library/Frameworks/LocalAuthentication.framework/.../LocalAuthentication
+# image and fails.
+/System/Library/Frameworks/LocalAuthentication.framework/Versions/A/LocalAuthentication _LAErrorDomain

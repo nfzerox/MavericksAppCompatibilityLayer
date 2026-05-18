@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.dylib
+!dist/*.dylib
+build/
+originals/
+.DS_Store
